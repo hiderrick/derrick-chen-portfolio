@@ -50,24 +50,6 @@ body {
     left: 1%
 }
 
-@media (max-width: 403px) {
-    .title-row {
-        padding-left: 90px;
-        
-    }
-    .floating {
-        padding-left: 0;
-        padding-right: 50px;
-        padding-top: 20px;
-    }
-    .text-column h1{
-        padding-right: 40px;
-    }
-    .text-column p {
-        font-size: medium;
-        padding-right: 59px;
-    }
-  }
 
 .text-column {
     display: flex;
@@ -84,6 +66,30 @@ body {
     }
     .floating-head{
         width: 150px ;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-row {
+        top: 0;
+        left: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+    }
+    .floating {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 1rem;
+    }
+    .text-column {
+        border-left: none;
+        align-items: center;
+    }
+    .text-column h1,
+    .text-column p {
+        padding-right: 0;
     }
 }
 
