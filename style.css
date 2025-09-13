@@ -171,12 +171,44 @@ body {
     width: 55%;
 }
 
+.resume-pdf-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+
+.resume-pdf-container iframe {
+    display: block;
+    width: 100%;
+    height: 650px;
+    border: none;
+    background: #f8f9fa;
+}
+
+@media (max-width: 1200px) {
+    .resume-pdf-container iframe {
+        height: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .resume-pdf-container iframe {
+        height: 500px;
+    }
+}
+
 @media (max-width: 576px) {
     .resume-section {
         width: 100%;
         padding: 0;
     }
     
+    .resume-pdf-container iframe {
+        height: 400px;
+    }
 }
 
 
@@ -197,7 +229,7 @@ body {
     }
   }
 
-.long-beach-logo {
+.university-logo {
     width: 300px;
 }
 
@@ -216,7 +248,7 @@ body {
         margin-bottom: 325px; 
         font-size: small;
     }
-    .long-beach-logo {
+    .university-logo {
         display: flex;
         justify-content: center;
     }
@@ -232,7 +264,7 @@ body {
         margin-bottom: 325px; 
         font-size: small;
     }
-    .long-beach-logo {
+    .university-logo {
         display: flex;
         justify-content: center;
     }
