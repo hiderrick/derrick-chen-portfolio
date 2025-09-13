@@ -22,14 +22,21 @@
 <body id="home">
 
   <!-- Navbar Section -->
-  <nav class="navbar navbar-expand-lg p-0 sticky-top d-flex justify-content-around" id="navbar">
+  <nav class="navbar navbar-expand-lg p-0 sticky-top" id="navbar">
     <div class="container mx-1 pt-1 pb-1">
-      <a class="navbar-brand" href="#home">CH</a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+        <div class="d-flex align-items-center">
+          <span class="me-2">Dark/Light Mode</span>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked onclick="toggleTheme()">
+            <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+          </div>
+        </div>
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#aboutmescroll">About</a>
@@ -94,50 +101,81 @@
     }
   </script>
 
-  <div class="container-fluid dark-mode-container">
-    <div class="row dark-mode-row">
-      <!-- Column for the switch -->
-      <div class="col-1 pe-0 form-check form-switch d-flex justify-content-end align-items-center">
-        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked onclick="toggleTheme()">
-        <label class="form-check-label ps-1" for="flexSwitchCheckChecked"></label>
-      </div>
-      <!-- Column for the moon icon -->
-      <div class="col-1 ps-1 pe-0 d-flex justify-content-start align-items-center moon-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon me-2"
-          viewBox="0 0 16 16">
-          <path
-            d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286" />
-        </svg>
-      </div>
-    </div>
-  </div>
 
   <!-- Landing Page -->
   <div class="container-fluid landing-container">
-    <div class="row w-100 title-row" data-aos="fade-down" data-aos-delay="250" data-aos-duration="1500">
-      <div class="col-lg-8 col-12 text-column">
-        <h1>Derrick Chen</h1>
-
+    <div class="hero-background"></div>
+    <div class="hero-content">
+      <div class="row w-100 title-row" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <div class="col-lg-6 col-12 text-column">
+          <div class="hero-text">
+            <h1 class="hero-title">Derrick Chen</h1>
+            <h2 class="hero-subtitle">CS Student</h2>
+            <p class="hero-description">
+              Passionate about full-stack development, specifically creating cool 
+              things that people will use and love!
+            </p>
+            <div class="hero-buttons">
+              <a href="static/derrick_chen_resume.pdf" target="_blank" class="btn btn-primary btn-lg me-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download me-2" viewBox="0 0 16 16">
+                  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                </svg>
+                Download Resume
+              </a>
+              <a href="#contact" class="btn btn-outline-light btn-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope me-2" viewBox="0 0 16 16">
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                </svg>
+                Get In Touch
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">4+ years</span>
+                <span class="stat-label">Programming Experience</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Technologies</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12 d-flex justify-content-center align-items-center floating">
+          <div class="hero-image-container" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+            <img src="images/FloatingHead.png" alt="Derrick Chen" class="floating-head">
+            <div class="floating-elements">
+              <div class="floating-icon" style="--delay: 0s;">
+                <i class="devicon-java-plain colored"></i>
+              </div>
+              <div class="floating-icon" style="--delay: 1s;">
+                <i class="devicon-python-plain colored"></i>
+              </div>
+              <div class="floating-icon" style="--delay: 2s;">
+                <i class="devicon-react-original colored"></i>
+              </div>
+              <div class="floating-icon" style="--delay: 3s;">
+                <i class="devicon-nodejs-plain colored"></i>
+              </div>
+            </div>
+          </div>
       </div>
-      <div class="col d-flex justify-content-center floating">
-        <img src="images/FloatingHead.png " alt="" class="floating-head ps-0">
       </div>
     </div>
-    <!-- Text Animation -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <div class="row d-flex justify-content-center typing-text-row" id="aboutmescroll">
-      <div class="col typing-text-col">
-        <h1>I am a <span class="auto-type text-primary"></span></h1>
+    
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" data-aos="fade-in" data-aos-delay="1000">
+      <div class="scroll-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg>
       </div>
     </div>
-    <script>
-      var typed = new Typed(".auto-type", {
-        strings: ["Engineer", "Programmer", "Student", "Designer"],
-        typeSpeed: 150,
-        backSpeed: 150,
-        loop: true
-      })
-    </script>
   </div>
 
   <!-- About Me -->
@@ -179,7 +217,7 @@
           </a>
         </div>
       </div>
-    </div>
+      </div>
 
     <div class="row mb-2 gx-5 aboutme-title-row">
       <div class="col" skill_tab>
