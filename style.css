@@ -4,10 +4,83 @@ html, body {
 
 body {
     font-family: 'Raleway', sans-serif;
+    font-size: 1.03rem;
     height: 100%;
     margin: 0;
     padding: 0;
     width: 100%;
+}
+
+/* Loading Screen */
+.site-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(12, 16, 28, 0.88);
+    color: #ffffff;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.site-loaded .site-loader {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.site-loader__card {
+    width: min(90vw, 320px);
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 1.25rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(18px);
+}
+
+.site-loader__spinner {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1.25rem;
+    border: 0.25rem solid rgba(255, 255, 255, 0.24);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: loader-spin 0.9s linear infinite;
+}
+
+.site-loader__eyebrow {
+    margin: 0 0 0.35rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.site-loader__text {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+@keyframes loader-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-loader {
+        transition: none;
+    }
+
+    .site-loader__spinner {
+        animation: none;
+    }
 }
 
 /* Dark Mode Button in Navbar */
@@ -114,12 +187,12 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 325px; 
-    font-size: large;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
 }
 
 @media (max-width: 570px) {
     #aboutme {
-        font-size: small;
+        font-size: 1rem;
         padding-left: 10%;
         padding-right: 10%;
         margin-top: 2rem;
@@ -219,7 +292,7 @@ body {
     margin-right: auto;
     margin-top: 320px;
     margin-bottom: 325px; 
-    font-size: large;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
 }
 
 @media (max-width: 767px) {
@@ -227,7 +300,7 @@ body {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 325px; 
-        font-size: small;
+        font-size: 1rem;
     }
     .university-logo {
         display: flex;
@@ -243,7 +316,7 @@ body {
         padding-left: 5%;
         padding-right: 5%;
         margin-bottom: 325px; 
-        font-size: small;
+        font-size: 1rem;
     }
     .university-logo {
         display: flex;
@@ -281,7 +354,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 125px; 
-    font-size: large;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
 }
 
 #row-icon {
@@ -298,6 +371,43 @@ body {
 #row-icon {
     width: 80%;
 }
+}
+
+/* Readability Panels */
+.hero-text,
+.aboutme-title-row,
+#education .card,
+#contact > .row {
+    background: rgba(15, 23, 42, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 1.25rem;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.16);
+    color: #f8fafc;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.aboutme-title-row,
+#contact > .row {
+    box-sizing: border-box;
+    padding: 1.25rem;
+}
+
+#education .card {
+    overflow: hidden;
+}
+
+#education .card-header {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+#contact > .row:not(#row-icon) {
+    width: min(92%, 520px);
+}
+
+#contact a {
+    color: #f8fafc;
 }
 
 /* Modern Hero Section Styles */
@@ -335,11 +445,12 @@ body {
 
 .hero-text {
     color: white;
-    padding: 1rem 0;
+    max-width: 620px;
+    padding: 1.5rem;
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
     background: linear-gradient(45deg, #fff, #e0e7ff);
@@ -350,7 +461,7 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 1.5vw, 1.55rem);
     font-weight: 400;
     margin-bottom: 1rem;
     color: #e0e7ff;
@@ -358,7 +469,7 @@ body {
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 1vw, 1.18rem);
     line-height: 1.6;
     margin-bottom: 1.5rem;
     color: #c7d2fe;
@@ -525,6 +636,7 @@ body {
     
     .hero-text {
         text-align: center;
+        padding: 1.25rem;
     }
     
     .hero-title {
@@ -617,7 +729,7 @@ body {
     
     .hero-text {
         text-align: center;
-        padding: 0.5rem 0;
+        padding: 1rem;
     }
     
     .hero-title {
@@ -631,7 +743,7 @@ body {
     }
     
     .hero-description {
-        font-size: 0.9rem;
+        font-size: 0.98rem;
         margin-bottom: 1rem;
         text-align: center;
     }
@@ -708,5 +820,10 @@ body {
     .scroll-arrow {
         width: 30px;
         height: 30px;
+    }
+
+    .aboutme-title-row,
+    #contact > .row {
+        padding: 1rem;
     }
 }
